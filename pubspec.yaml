@@ -44,6 +44,8 @@ dependencies:
   flutter_dotenv: ^5.1.0
   json_annotation: ^4.8.1
   hive_flutter: ^1.1.0
+  fluttertoast: ^8.2.4
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
