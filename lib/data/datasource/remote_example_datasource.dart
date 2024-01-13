@@ -1,4 +1,4 @@
-import 'remote_data_source.dart';
+import 'remote_datasource.dart';
 import '../../config/API.dart';
 
 class RemoteExampleDataSource extends RemoteDataSource {

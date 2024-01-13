@@ -1,4 +1,4 @@
-import 'package:flutter_mvvm/data/data_source/remote_example_data_source.dart';
+import 'package:flutter_mvvm/data/datasource/remote_example_datasource.dart';
 import 'package:flutter_mvvm/data/model/example.dart';
 import 'package:logger/logger.dart';
 
