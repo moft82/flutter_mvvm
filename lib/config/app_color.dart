@@ -2,29 +2,17 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   // Primary Color
-  static const primaryColor = Color(0xff6C44FD);
+  static const primaryColor = Color(0xff7289DA);
+  static const subColorBright = Color(0xff99aab5);
+  static const subColorDark = Color(0xff2c2f33);
+  static const subColorDarker = Color(0xff23272a);
+
   static const gradientColor = LinearGradient(colors: [
-    Color(0xffC46CFF),
-    Color(0xffC46CFF),
-    Color(0xff9458FE),
-    Color(0xff6C44FD),
+    primaryColor,
+    subColorBright,
+    subColorDark,
+    subColorDarker,
   ], begin: Alignment.topCenter, end: Alignment.bottomCenter);
-
-  static const whitegradientColor = LinearGradient(colors: [
-    Color(0xffFFFFF),
-    Color(0xffFFFFFF),
-    Color(0xffFFFFFF),
-    Color(0xffFFFFFF),
-  ], begin: Alignment.topCenter, end: Alignment.bottomCenter);
-
-  // 이용방법
-  static const useGradientColor = LinearGradient(colors: [
-    Color(0xffc46cff),
-    Color(0xff9458fe),
-    Color(0xff744bfd),
-    Color(0xff6c44fd)
-  ], begin: Alignment.centerRight, end: Alignment.centerLeft);
-
 
   // Gray Color
   static const grayColor01 = Color(0xffF8F9FB);
@@ -39,7 +27,6 @@ class AppColor {
   static const grayColor10 = Color(0xff1B1B1B);
 
   // State Color
-  static const success = Color(0xff6C44FD);
   static const error = Color(0xffFF0000);
   static const white = Color(0xffFFFFFF);
   static const black = Color(0xff000000);
