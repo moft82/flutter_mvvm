@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SplashScreenViewModel extends ChangeNotifier {
   bool shouldNavigateToHome = false;
 
-  Future<void> fetchData() async {
+  Future<bool> fetchData() async {
     // Simulate fetching data
     await Future.delayed(Duration(seconds: 2));
 
@@ -11,5 +11,6 @@ class SplashScreenViewModel extends ChangeNotifier {
     shouldNavigateToHome = true;
 
     notifyListeners();
+    return shouldNavigateToHome;
   }
 }

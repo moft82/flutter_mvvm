@@ -1,18 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import '../viewmodel/splash_viewmodel.dart';
 import 'home.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  late Future<bool> data;
+
+  @override
+  void initState(){
+    SplashScreenViewModel screenViewModel = Provider.of<SplashScreenViewModel>(context, listen: false);
+    data = screenViewModel.fetchData();
+  }
+
   @override
   Widget build(BuildContext context) {
+    Logger logger = Logger();
+    SplashScreenViewModel _screenViewModel = Provider.of<SplashScreenViewModel>(context);
     return Scaffold(
       body: FutureBuilder(
-        future: Provider.of<SplashScreenViewModel>(context, listen: false).fetchData(),
+        future: data,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             // While data is being fetched, show a loading indicator
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: Text("Loading...."));
           } else if (snapshot.hasError) {
             // If an error occurs during data fetching, show an error dialog
             return Center(
