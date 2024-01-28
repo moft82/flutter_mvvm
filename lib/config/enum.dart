@@ -11,10 +11,4 @@ enum ToastType {
   final String svg;
 
   const ToastType(this.color, this.svg);
-
-
-  // factory ToastType.getByCode(String code){
-  //   return ToastType.values.firstWhere((value) => value.code == code,
-  //       orElse: () => ToastType.undefined);
-  // }
 }
