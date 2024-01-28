@@ -12,3 +12,17 @@ enum ToastType {
 
   const ToastType(this.color, this.svg);
 }
+
+enum Option{
+  option1("option1","option1 desc", 'asset/img/primary_toast_icon.svg'),
+  option2("option2","option2 desc", 'asset/img/primary_toast_icon.svg'),
+  option3("option3","option3 desc", 'asset/img/primary_toast_icon.svg'),
+  option4("option4","option4 desc", 'asset/img/primary_toast_icon.svg');
+
+
+  final String name;
+  final String description;
+  final String svg;
+
+  const Option(this.name, this.description, this.svg);
+}

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/config/enum.dart';
-
 import '../core/toast.dart';
+import '../core/dialog.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   Widget toastTester(BuildContext context) {
     Toast toast = Toast();
-    return Row(children: [
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
       ElevatedButton(
           onPressed: () {
             toast.showToast(
@@ -44,16 +46,69 @@ class Home extends StatelessWidget {
     ]);
   }
 
+  Widget dialogTester(BuildContext context) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+      ElevatedButton(
+          onPressed: () {
+            showCustomDialog(context: context,
+                dialog: alertDialog(context: context,
+                    title: "Alert Dialog",
+                    content: "Alert Dialog"));
+          },
+          child: const Text("alert")),
+      ElevatedButton(
+          onPressed: () {
+            showCustomDialog(context: context,
+                dialog: simpleDialog(
+                  context: context,
+                  title: "Simple Dialog",
+                  content: "Simple Dialog",
+                  confirmKeyword: "Confirm",
+                  confirmOnTap: () {
+                    Navigator.pop(context);
+                  },
+                  dismissKeyword: "Discard",
+                  dismissOnTap: () {
+                    Navigator.pop(context);
+                  },
+                ));
+          },
+          child: const Text("simple")),
+      ElevatedButton(
+          onPressed: () async {
+            var date = await datePickerDialog(context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2000),
+                lastDate: DateTime.now());
+          },
+          child: const Text("Date")),
+      ElevatedButton(
+          onPressed: () async {
+            var date = await dateRangePickerDialog(context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2000),
+                lastDate: DateTime.now());
+          },
+          child: const Text("Date Range")),
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
+      body: Center(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
               const Text("Toast"),
-          toastTester(context),
-          ],
-        )),);
+              toastTester(context),
+              SizedBox(height: 20,),
+              const Text("Dialog"),
+              dialogTester(context),
+            ],
+          )),);
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_mvvm/config/app_color.dart';
 import 'package:flutter_mvvm/view/splash.dart';
+import 'package:flutter_mvvm/viewmodel/example_viewmodel.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -12,7 +13,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: "lib/config/.env");
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_) => SplashScreenViewModel())
+    ChangeNotifierProvider(create: (_) => SplashScreenViewModel()),
+    ChangeNotifierProvider(create: (_) => ExampleViewModel())
   ], child: MyApp()));
 }
 
