@@ -334,11 +334,6 @@ class TextStyles {
     fontWeight: FontWeight.w400,
   );
 
-
-
-
-
-
   /// 기존
   // Heading
   static const Heading1 = TextStyle(
@@ -347,20 +342,6 @@ class TextStyles {
     fontFamily: "Pretendard",
     fontWeight: FontWeight.w700,
   );
-
-
-
-  // static const Heading3_R = TextStyle(
-  //   color: AppColor.black,
-  //   fontSize: 22,
-  //   fontFamily: "Pretendard",
-  //   fontWeight: FontWeight.w400,
-  // );
-
-
-
-
-
 
   static const Heading4_R = TextStyle(
     color: AppColor.black,
@@ -464,13 +445,6 @@ class TextStyles {
     fontWeight: FontWeight.w600,
   );
 
-
-  // static final LabelText_3 = TextStyle(
-  //   color: AppColor.black,
-  //   fontSize: 11.sp,
-  //   fontFamily: "Pretendard",
-  //   fontWeight: FontWeight.w500,
-  // );
 
   static final LabelText_4 = TextStyle(
     color: AppColor.black,

@@ -1,16 +1,61 @@
-# flutter_mvvm
+# Flutter MVVM Template using Provider
+Repository for template using MVVM pattern with Provider.
 
-Flutter MVVM template
 
-## Getting Started
+# Dir Structure
+'''
+├── lib
+│   ├── config
+│   │   ├── .env
+│   │   ├── api.dart
+│   │   ├── app_color.dart
+│   │   ├── app_font.dart
+│   │   ├── constants.dart
+│   │   ├── enum.dart
+│   ├── core
+│   │   ├── common.dart
+│   │   ├── dialog.dart
+│   │   ├── toast.dart
+│   │   ├── util.dart
+│   ├── data
+│   │   ├── datasource
+│   │   ├── model
+│   │   ├── repository
+│   ├── view
+│   ├── viewmodel
+'''
+## config
+- Files containing setting values for application such as api, color, fonts and etc.
+- .env needs "flutter_dotenv" package.
+- Displaying UI elements consistently across different screen sizes and resolutions, use "flutter_screenutil" package.
 
-This project is a starting point for a Flutter application.
+## core
+- A set of functions(toast, dialog and etc) used globally in an application.
+- toast needs "flutter_toast" package.
 
-A few resources to get you started if this is your first Flutter project:
+## Data
+- A set of files to precess data in application.
+- It includes data source, model, repository.
+### Data Souce
+- Perform tasks to connect with internal and external data sources.
+    - Remote DataSource: Receive data by communicating with an external server.
+    - Local DataSource: Access to mobile phone internal storage data.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Model
+- Class (container) to contain data to be loaded from the server
+- Requires implementation of Json methods (fromJson, toJson) for API communication
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Repository
+- processes and stores data received from Datasource.
+- Elements that ViewModel accesses to receive data.
+- One repository must hold only one model data.
+
+
+# View
+- Screen actually shown to the user
+
+# View Model
+- Process data connections and events that occur in the view.
+- Handles main business logic.
+- Receive data by connecting to the repository.
+- Use ChangeNotifier to utilize Provider.
