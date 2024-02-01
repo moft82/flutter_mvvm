@@ -59,3 +59,17 @@ Repository for template using MVVM pattern with Provider.
 - Handles main business logic.
 - Receive data by connecting to the repository.
 - Use ChangeNotifier to utilize Provider.
+
+# Packages
+- cupertino_icons
+- intl
+- provider
+- http
+- flutter_screenutil
+- logger
+- hive
+- flutter_dotenv
+- json_annotation
+- hive_flutter
+- fluttertoast
+- flutter_svg
