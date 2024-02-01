@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/config/enum.dart';
+import 'package:flutter_mvvm/view/input.dart';
 import '../core/toast.dart';
 import '../core/dialog.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
+
+  Widget spacer(){
+    return const SizedBox(height: 10);
+  }
 
   Widget toastTester(BuildContext context) {
     Toast toast = Toast();
@@ -105,9 +110,14 @@ class Home extends StatelessWidget {
             children: [
               const Text("Toast"),
               toastTester(context),
-              SizedBox(height: 20,),
+              spacer(),
               const Text("Dialog"),
               dialogTester(context),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> InputView()));
+                  },
+                  child: const Text("alert"))
             ],
           )),);
   }
