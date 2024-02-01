@@ -3,7 +3,7 @@ Repository for template using MVVM pattern with Provider.
 
 
 # Dir Structure
-'''
+```
 ├── lib
 │   ├── config
 │   │   ├── .env
@@ -23,7 +23,7 @@ Repository for template using MVVM pattern with Provider.
 │   │   ├── repository
 │   ├── view
 │   ├── viewmodel
-'''
+```
 ## config
 - Files containing setting values for application such as api, color, fonts and etc.
 - .env needs "flutter_dotenv" package.
